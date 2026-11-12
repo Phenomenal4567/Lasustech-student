@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Scholar Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><span class="mark">S</span> Scholar Portal</div>
+      <nav class="side-nav">
+        <div class="label">Main</div>
+        <a href="dashboard.html" class="active"><span class="ic">&#9636;</span> Dashboard</a>
+        <a href="profile.html"><span class="ic">&#128100;</span> Profile</a>
+        <div class="label">Academics</div>
+        <a href="courses.html"><span class="ic">&#128218;</span> Course Registration</a>
+        <a href="results.html"><span class="ic">&#128202;</span> Results</a>
+        <a href="dashboard.html#exams"><span class="ic">&#128221;</span> Examinations</a>
+        <div class="label">Finance</div>
+        <a href="payments.html"><span class="ic">&#128179;</span> School Fees</a>
+        <a href="payments.html#history"><span class="ic">&#128179;</span> Payment History</a>
+        <div class="label">Account</div>
+        <a href="index.html"><span class="ic">&#128682;</span> Logout</a>
+      </nav>
+      <div class="side-foot">Scholar Portal &middot; Demo v1.0<br />Frontend practice project</div>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- MAIN -->
+    <div class="main">
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <span class="page-title">Dashboard</span>
+        <div class="spacer"></div>
+        <div class="search">
+          <span>&#128269;</span>
+          <input type="text" placeholder="Search..." />
+        </div>
+        <button class="icon-btn">&#128276;<span class="dot"></span></button>
+        <div class="dropdown">
+          <div class="user" id="userBtn">
+            <span class="avatar">AA</span>
+            <span class="meta"><b>Adelakun Abdulsalam</b><span>250405010047</span></span>
+          </div>
+          <div class="dropdown-menu" id="userMenu">
+            <a href="profile.html">&#128100; My Profile</a>
+            <a href="payments.html">&#128179; School Fees</a>
+            <div class="sep"></div>
+            <a href="index.html">&#128682; Logout</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <main class="content">
+        <div class="welcome">
+          <div>
+            <h2>Welcome back, Abdulsalam &#128075;</h2>
+            <p>Here is a quick overview of your academic standing this session. Remember to complete your course registration before the deadline.</p>
+            <span class="wtag">2024/2025 Session &middot; First Semester</span>
+          </div>
+        </div>
+
+        <div class="grid cols-4 mt-16">
+          <div class="card card-pad"><div class="stat">
+            <div class="s-ic green">&#128218;</div>
+            <div class="s-meta"><div class="v">8</div><div class="l">Registered Courses</div></div>
+          </div></div>
+          <div class="card card-pad"><div class="stat">
+            <div class="s-ic gold">&#9733;</div>
+            <div class="s-meta"><div class="v">4.12</div><div class="l">Current CGPA</div></div>
+          </div></div>
+          <div class="card card-pad"><div class="stat">
+            <div class="s-ic blue">&#128221;</div>
+            <div class="s-meta"><div class="v">21</div><div class="l">Total Units</div></div>
+          </div></div>
+          <div class="card card-pad"><div class="stat">
+            <div class="s-ic red">&#128179;</div>
+            <div class="s-meta"><div class="v">&#8358;45,000</div><div class="l">Outstanding Fees</div></div>
+          </div></div>
+        </div>
+
+        <div class="grid cols-3 mt-16">
+          <div class="card" style="grid-column: span 2;">
+            <div class="card-head"><h3>Registered Courses — First Semester</h3><a href="courses.html" class="btn btn-ghost btn-sm">Manage</a></div>
+            <div class="table-wrap">
+              <table class="data">
+                <thead><tr><th>Code</th><th>Course Title</th><th>Units</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>CSC 301</td><td>Data Structures &amp; Algorithms</td><td class="num">3</td><td><span class="badge reg">Registered</span></td></tr>
+                  <tr><td>CSC 305</td><td>Operating Systems</td><td class="num">3</td><td><span class="badge reg">Registered</span></td></tr>
+                  <tr><td>CSC 311</td><td>Database Management Systems</td><td class="num">3</td><td><span class="badge reg">Registered</span></td></tr>
+                  <tr><td>MTH 301</td><td>Numerical Analysis</td><td class="num">2</td><td><span class="badge reg">Registered</span></td></tr>
+                  <tr><td>GNS 301</td><td>Entrepreneurship Studies</td><td class="num">2</td><td><span class="badge reg">Registered</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card" id="exams">
+            <div class="card-head"><h3>Upcoming Examinations</h3></div>
+            <div class="card-body" style="display:grid; gap:14px;">
+              <div><b>CSC 301</b><div class="muted" style="font-size:13px;">Mon, 15 Dec &middot; 9:00 AM &middot; Hall A</div></div>
+              <div><b>CSC 311</b><div class="muted" style="font-size:13px;">Wed, 17 Dec &middot; 12:00 PM &middot; Lab 2</div></div>
+              <div><b>MTH 301</b><div class="muted" style="font-size:13px;">Fri, 19 Dec &middot; 9:00 AM &middot; Hall C</div></div>
+              <div><b>GNS 301</b><div class="muted" style="font-size:13px;">Mon, 22 Dec &middot; 2:00 PM &middot; Hall A</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid cols-2 mt-16">
+          <div class="card">
+            <div class="card-head"><h3>Fee Summary</h3><a href="payments.html" class="btn btn-ghost btn-sm">Pay Now</a></div>
+            <div class="table-wrap">
+              <table class="data">
+                <thead><tr><th>Item</th><th>Amount</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Tuition Fee</td><td class="num">&#8358;75,000</td><td><span class="badge paid">Paid</span></td></tr>
+                  <tr><td>Acceptance / Dev. Levy</td><td class="num">&#8358;20,000</td><td><span class="badge paid">Paid</span></td></tr>
+                  <tr><td>Hostel Accommodation</td><td class="num">&#8358;45,000</td><td><span class="badge pending">Pending</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><h3>Announcements</h3></div>
+            <div class="card-body" style="display:grid; gap:14px;">
+              <div><b>Course registration deadline</b><div class="muted" style="font-size:13px;">All students must complete registration on or before 30 November.</div></div>
+              <div><b>Exam timetable released</b><div class="muted" style="font-size:13px;">The first semester exam timetable is now available.</div></div>
+              <div><b>Hostel balance reminder</b><div class="muted" style="font-size:13px;">Clear outstanding accommodation fees to retain your bed space.</div></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

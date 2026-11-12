@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Registration — Scholar Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><span class="mark">S</span> Scholar Portal</div>
+      <nav class="side-nav">
+        <div class="label">Main</div>
+        <a href="dashboard.html"><span class="ic">&#9636;</span> Dashboard</a>
+        <a href="profile.html"><span class="ic">&#128100;</span> Profile</a>
+        <div class="label">Academics</div>
+        <a href="courses.html" class="active"><span class="ic">&#128218;</span> Course Registration</a>
+        <a href="results.html"><span class="ic">&#128202;</span> Results</a>
+        <a href="dashboard.html#exams"><span class="ic">&#128221;</span> Examinations</a>
+        <div class="label">Finance</div>
+        <a href="payments.html"><span class="ic">&#128179;</span> School Fees</a>
+        <a href="payments.html#history"><span class="ic">&#128179;</span> Payment History</a>
+        <div class="label">Account</div>
+        <a href="index.html"><span class="ic">&#128682;</span> Logout</a>
+      </nav>
+      <div class="side-foot">Scholar Portal &middot; Demo v1.0<br />Frontend practice project</div>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="main">
+      <header class="topbar">
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <span class="page-title">Course Registration</span>
+        <div class="spacer"></div>
+        <div class="search"><span>&#128269;</span><input type="text" placeholder="Search..." /></div>
+        <button class="icon-btn">&#128276;<span class="dot"></span></button>
+        <div class="dropdown">
+          <div class="user" id="userBtn">
+            <span class="avatar">AA</span>
+            <span class="meta"><b>Adelakun Abdulsalam</b><span>250405010047</span></span>
+          </div>
+          <div class="dropdown-menu" id="userMenu">
+            <a href="profile.html">&#128100; My Profile</a>
+            <a href="payments.html">&#128179; School Fees</a>
+            <div class="sep"></div>
+            <a href="index.html">&#128682; Logout</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="page-head">
+          <h1>Course Registration</h1>
+          <div class="crumb">Dashboard / Course Registration</div>
+        </div>
+
+        <div class="card card-pad">
+          <div class="form-row">
+            <div class="field">
+              <label for="session">Session</label>
+              <select id="session"><option>2024/2025</option><option>2023/2024</option></select>
+            </div>
+            <div class="field">
+              <label for="semester">Semester</label>
+              <select id="semester"><option>First Semester</option><option>Second Semester</option></select>
+            </div>
+            <div class="field">
+              <label for="level">Level</label>
+              <select id="level"><option>300 Level</option><option>200 Level</option><option>100 Level</option></select>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mt-16">
+          <div class="card-head">
+            <h3>Available Courses</h3>
+            <input type="text" id="courseFilter" placeholder="Filter by code or title..." style="padding:8px 12px;border:1px solid var(--line);border-radius:8px;font-size:13px;width:220px;" />
+          </div>
+          <div class="table-wrap">
+            <table class="data" id="courseTable">
+              <thead>
+                <tr><th style="width:48px;">Pick</th><th>Code</th><th>Course Title</th><th>Units</th><th>Type</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="check-cell"><input type="checkbox" data-units="3" checked /></td><td>CSC 301</td><td>Data Structures &amp; Algorithms</td><td class="num">3</td><td>Core</td></tr>
+                <tr><td class="check-cell"><input type="checkbox" data-units="3" checked /></td><td>CSC 305</td><td>Operating Systems</td><td class="num">3</td><td>Core</td></tr>
+                <tr><td class="check-cell"><input type="checkbox" data-units="3" checked /></td><td>CSC 311</td><td>Database Management Systems</td><td class="num">3</td><td>Core</td></tr>
+                <tr><td class="check-cell"><input type="checkbox" data-units="3" checked /></td><td>CSC 309</td><td>Web Application Development</td><td class="num">3</td><td>Core</td></tr>
+                <tr><td class="check-cell"><input type="checkbox" data-units="2" checked /></td><td>MTH 301</td><td>Numerical Analysis</td><td class="num">2</td><td>Required</td></tr>
+                <tr><td class="check-cell"><input type="checkbox" data-units="2" checked /></td><td>CSC 313</td><td>Computer Architecture</td><td class="num">2</td><td>Required</td></tr>
+                <tr><td class="check-cell"><input type="checkbox" data-units="3" checked /></td><td>CSC 307</td><td>Software Engineering I</td><td class="num">3</td><td>Core</td></tr>
+                <tr><td class="check-cell"><input type="checkbox" data-units="2" checked /></td><td>GNS 301</td><td>Entrepreneurship Studies</td><td class="num">2</td><td>Elective</td></tr>
+                <tr><td class="check-cell"><input type="checkbox" data-units="2" /></td><td>CSC 315</td><td>Human–Computer Interaction</td><td class="num">2</td><td>Elective</td></tr>
+                <tr><td class="check-cell"><input type="checkbox" data-units="2" /></td><td>STA 301</td><td>Probability &amp; Statistics II</td><td class="num">2</td><td>Elective</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-body">
+            <div class="unit-summary">
+              <div><b id="selCount">8</b><span>Courses selected</span></div>
+              <div><b id="unitTotal">21</b><span>Total units</span></div>
+              <div><b>24</b><span>Max allowed</span></div>
+            </div>
+            <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+              <button class="btn btn-primary" id="registerBtn" style="width:auto;">Register Selected Courses</button>
+              <button class="btn btn-ghost" id="printBtn">Print Course Form</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

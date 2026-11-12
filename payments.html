@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Fees — Scholar Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><span class="mark">S</span> Scholar Portal</div>
+      <nav class="side-nav">
+        <div class="label">Main</div>
+        <a href="dashboard.html"><span class="ic">&#9636;</span> Dashboard</a>
+        <a href="profile.html"><span class="ic">&#128100;</span> Profile</a>
+        <div class="label">Academics</div>
+        <a href="courses.html"><span class="ic">&#128218;</span> Course Registration</a>
+        <a href="results.html"><span class="ic">&#128202;</span> Results</a>
+        <a href="dashboard.html#exams"><span class="ic">&#128221;</span> Examinations</a>
+        <div class="label">Finance</div>
+        <a href="payments.html" class="active"><span class="ic">&#128179;</span> School Fees</a>
+        <a href="payments.html#history"><span class="ic">&#128179;</span> Payment History</a>
+        <div class="label">Account</div>
+        <a href="index.html"><span class="ic">&#128682;</span> Logout</a>
+      </nav>
+      <div class="side-foot">Scholar Portal &middot; Demo v1.0<br />Frontend practice project</div>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="main">
+      <header class="topbar">
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <span class="page-title">School Fees</span>
+        <div class="spacer"></div>
+        <div class="search"><span>&#128269;</span><input type="text" placeholder="Search..." /></div>
+        <button class="icon-btn">&#128276;<span class="dot"></span></button>
+        <div class="dropdown">
+          <div class="user" id="userBtn">
+            <span class="avatar">AA</span>
+            <span class="meta"><b>Adelakun Abdulsalam</b><span>250405010047</span></span>
+          </div>
+          <div class="dropdown-menu" id="userMenu">
+            <a href="profile.html">&#128100; My Profile</a>
+            <a href="payments.html">&#128179; School Fees</a>
+            <div class="sep"></div>
+            <a href="index.html">&#128682; Logout</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="page-head">
+          <h1>School Fees &amp; Payments</h1>
+          <div class="crumb">Dashboard / School Fees</div>
+        </div>
+
+        <div class="grid cols-3">
+          <div class="card card-pad"><div class="stat">
+            <div class="s-ic green">&#8358;</div>
+            <div class="s-meta"><div class="v">&#8358;140,000</div><div class="l">Total Charges</div></div>
+          </div></div>
+          <div class="card card-pad"><div class="stat">
+            <div class="s-ic blue">&#10003;</div>
+            <div class="s-meta"><div class="v">&#8358;95,000</div><div class="l">Total Paid</div></div>
+          </div></div>
+          <div class="card card-pad"><div class="stat">
+            <div class="s-ic red">&#33;</div>
+            <div class="s-meta"><div class="v">&#8358;45,000</div><div class="l">Outstanding</div></div>
+          </div></div>
+        </div>
+
+        <div class="card mt-16">
+          <div class="card-head"><h3>Fee Breakdown — 2024/2025</h3></div>
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Fee Item</th><th>Amount</th><th>Status</th><th class="right">Action</th></tr></thead>
+              <tbody>
+                <tr><td>Tuition Fee</td><td class="num">&#8358;75,000</td><td><span class="badge paid">Paid</span></td><td class="right"><button class="btn btn-ghost btn-sm" disabled>Paid</button></td></tr>
+                <tr><td>Acceptance / Development Levy</td><td class="num">&#8358;20,000</td><td><span class="badge paid">Paid</span></td><td class="right"><button class="btn btn-ghost btn-sm" disabled>Paid</button></td></tr>
+                <tr><td>Hostel Accommodation</td><td class="num">&#8358;45,000</td><td><span class="badge pending">Pending</span></td><td class="right"><button class="btn btn-primary btn-sm payBtn" data-item="Hostel Accommodation" data-amt="45,000" style="width:auto;">Pay Now</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card mt-16" id="history">
+          <div class="card-head">
+            <h3>Payment History</h3>
+            <select id="histFilter" style="padding:8px 12px;border:1px solid var(--line);border-radius:8px;font-size:13px;">
+              <option value="all">All statuses</option>
+              <option value="paid">Successful</option>
+              <option value="pending">Pending</option>
+              <option value="failed">Failed</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table class="data" id="histTable">
+              <thead><tr><th>Reference</th><th>Description</th><th>Amount</th><th>Date</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr data-status="paid"><td>SP-INV-10231</td><td>Tuition Fee (2024/2025)</td><td class="num">&#8358;75,000</td><td>12 Oct 2024</td><td><span class="badge paid">Successful</span></td></tr>
+                <tr data-status="paid"><td>SP-INV-10198</td><td>Acceptance / Dev. Levy</td><td class="num">&#8358;20,000</td><td>28 Sep 2024</td><td><span class="badge paid">Successful</span></td></tr>
+                <tr data-status="pending"><td>SP-INV-10340</td><td>Hostel Accommodation</td><td class="num">&#8358;45,000</td><td>—</td><td><span class="badge pending">Pending</span></td></tr>
+                <tr data-status="failed"><td>SP-INV-10305</td><td>Hostel Accommodation (retry)</td><td class="num">&#8358;45,000</td><td>05 Nov 2024</td><td><span class="badge failed">Failed</span></td></tr>
+                <tr data-status="paid"><td>SP-INV-09877</td><td>Tuition Fee (2023/2024)</td><td class="num">&#8358;72,000</td><td>15 Oct 2023</td><td><span class="badge paid">Successful</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-body">
+            <p class="muted" style="font-size:13px;">This is a demo interface. The &ldquo;Pay Now&rdquo; button only shows a sample confirmation — no real payment is processed and no data leaves your browser.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

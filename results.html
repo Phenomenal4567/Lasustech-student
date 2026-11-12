@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results — Scholar Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><span class="mark">S</span> Scholar Portal</div>
+      <nav class="side-nav">
+        <div class="label">Main</div>
+        <a href="dashboard.html"><span class="ic">&#9636;</span> Dashboard</a>
+        <a href="profile.html"><span class="ic">&#128100;</span> Profile</a>
+        <div class="label">Academics</div>
+        <a href="courses.html"><span class="ic">&#128218;</span> Course Registration</a>
+        <a href="results.html" class="active"><span class="ic">&#128202;</span> Results</a>
+        <a href="dashboard.html#exams"><span class="ic">&#128221;</span> Examinations</a>
+        <div class="label">Finance</div>
+        <a href="payments.html"><span class="ic">&#128179;</span> School Fees</a>
+        <a href="payments.html#history"><span class="ic">&#128179;</span> Payment History</a>
+        <div class="label">Account</div>
+        <a href="index.html"><span class="ic">&#128682;</span> Logout</a>
+      </nav>
+      <div class="side-foot">Scholar Portal &middot; Demo v1.0<br />Frontend practice project</div>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="main">
+      <header class="topbar">
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <span class="page-title">Results</span>
+        <div class="spacer"></div>
+        <div class="search"><span>&#128269;</span><input type="text" placeholder="Search..." /></div>
+        <button class="icon-btn">&#128276;<span class="dot"></span></button>
+        <div class="dropdown">
+          <div class="user" id="userBtn">
+            <span class="avatar">AA</span>
+            <span class="meta"><b>Adelakun Abdulsalam</b><span>250405010047</span></span>
+          </div>
+          <div class="dropdown-menu" id="userMenu">
+            <a href="profile.html">&#128100; My Profile</a>
+            <a href="payments.html">&#128179; School Fees</a>
+            <div class="sep"></div>
+            <a href="index.html">&#128682; Logout</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="page-head">
+          <h1>Academic Results</h1>
+          <div class="crumb">Dashboard / Results</div>
+        </div>
+
+        <div class="grid cols-3">
+          <div class="card card-pad" style="display:grid;place-items:center;">
+            <div class="gpa-ring" style="--p:82;">
+              <div class="inner"><b>4.12</b><span>CGPA</span></div>
+            </div>
+            <p class="muted" style="margin-top:12px;font-size:13px;">Cumulative GPA (5.0 scale)</p>
+          </div>
+          <div class="card card-pad" style="grid-column: span 2;">
+            <h3 style="margin-bottom:14px;">Classification</h3>
+            <div class="info-list">
+              <div class="row"><span class="k">Degree Class (projected)</span><span class="v">Second Class Upper</span></div>
+              <div class="row"><span class="k">Total Units Passed</span><span class="v">82</span></div>
+              <div class="row"><span class="k">Outstanding / Carryover</span><span class="v">None</span></div>
+              <div class="row"><span class="k">Academic Standing</span><span class="v">Good Standing</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mt-16">
+          <div class="card-head"><h3>Semester Results</h3></div>
+          <div class="card-body">
+            <div class="tabs" id="resultTabs">
+              <button class="tab-btn active" data-tab="t1">300L &middot; 1st Sem</button>
+              <button class="tab-btn" data-tab="t2">200L &middot; 2nd Sem</button>
+              <button class="tab-btn" data-tab="t3">200L &middot; 1st Sem</button>
+            </div>
+
+            <div class="tab-panel active" id="t1">
+              <div class="table-wrap">
+                <table class="data">
+                  <thead><tr><th>Code</th><th>Course Title</th><th>Units</th><th>Score</th><th>Grade</th><th>Remark</th></tr></thead>
+                  <tbody>
+                    <tr><td>CSC 301</td><td>Data Structures &amp; Algorithms</td><td class="num">3</td><td class="num">71</td><td>A</td><td><span class="badge pass">Pass</span></td></tr>
+                    <tr><td>CSC 305</td><td>Operating Systems</td><td class="num">3</td><td class="num">64</td><td>B</td><td><span class="badge pass">Pass</span></td></tr>
+                    <tr><td>CSC 311</td><td>Database Management Systems</td><td class="num">3</td><td class="num">78</td><td>A</td><td><span class="badge pass">Pass</span></td></tr>
+                    <tr><td>MTH 301</td><td>Numerical Analysis</td><td class="num">2</td><td class="num">55</td><td>C</td><td><span class="badge pass">Pass</span></td></tr>
+                    <tr><td>GNS 301</td><td>Entrepreneurship Studies</td><td class="num">2</td><td class="num">68</td><td>B</td><td><span class="badge pass">Pass</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="unit-summary"><div><b>13</b><span>Units</span></div><div><b>4.23</b><span>GPA</span></div><div><b>A–C</b><span>Grade range</span></div></div>
+            </div>
+
+            <div class="tab-panel" id="t2">
+              <div class="table-wrap">
+                <table class="data">
+                  <thead><tr><th>Code</th><th>Course Title</th><th>Units</th><th>Score</th><th>Grade</th><th>Remark</th></tr></thead>
+                  <tbody>
+                    <tr><td>CSC 208</td><td>Object Oriented Programming</td><td class="num">3</td><td class="num">74</td><td>A</td><td><span class="badge pass">Pass</span></td></tr>
+                    <tr><td>CSC 212</td><td>Discrete Structures</td><td class="num">3</td><td class="num">61</td><td>B</td><td><span class="badge pass">Pass</span></td></tr>
+                    <tr><td>MTH 202</td><td>Linear Algebra</td><td class="num">3</td><td class="num">58</td><td>C</td><td><span class="badge pass">Pass</span></td></tr>
+                    <tr><td>PHY 204</td><td>Electronics II</td><td class="num">2</td><td class="num">66</td><td>B</td><td><span class="badge pass">Pass</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="unit-summary"><div><b>11</b><span>Units</span></div><div><b>4.00</b><span>GPA</span></div><div><b>A–C</b><span>Grade range</span></div></div>
+            </div>
+
+            <div class="tab-panel" id="t3">
+              <div class="table-wrap">
+                <table class="data">
+                  <thead><tr><th>Code</th><th>Course Title</th><th>Units</th><th>Score</th><th>Grade</th><th>Remark</th></tr></thead>
+                  <tbody>
+                    <tr><td>CSC 201</td><td>Computer Programming I</td><td class="num">3</td><td class="num">69</td><td>B</td><td><span class="badge pass">Pass</span></td></tr>
+                    <tr><td>CSC 205</td><td>Digital Logic Design</td><td class="num">3</td><td class="num">72</td><td>A</td><td><span class="badge pass">Pass</span></td></tr>
+                    <tr><td>MTH 201</td><td>Calculus</td><td class="num">3</td><td class="num">57</td><td>C</td><td><span class="badge pass">Pass</span></td></tr>
+                    <tr><td>GNS 201</td><td>Use of English</td><td class="num">2</td><td class="num">63</td><td>B</td><td><span class="badge pass">Pass</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="unit-summary"><div><b>11</b><span>Units</span></div><div><b>4.09</b><span>GPA</span></div><div><b>A–C</b><span>Grade range</span></div></div>
+            </div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
